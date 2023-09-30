@@ -30,3 +30,12 @@ console.log(typeof obj);
 console.log(typeof myFunction);
 
 console.log(heroes.slice(0,3));
+
+
+
+// ++++++++++++++++++++++++++++++++++++++++++++++++
+
+// Stack (Primitive), Heap (Non-Primitive)
+
+
+// https://excalidraw.com/#json=COLGtlhjfkqtAWDfkgfTe,p2WBtQNQP3XY1MQetMXrjA
