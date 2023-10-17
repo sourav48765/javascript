@@ -1,7 +1,7 @@
 # Projects related to DOM
 
 ## Project link
-[Click here](https://stackblitz.com/edit/dom-project-chaiaurcode-njps9w?file=1-colorChanger%2Findex.html)
+[Click here](https://stackblitz.com/edit/dom-project-chaiaurcode-5cjfec?file=1-colorChanger%2Fchaiaurcode.js)
 
 ## project 1
 
