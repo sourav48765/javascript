@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Api</title>
+</head>
+<body>
+    <h2>Press to get info about</h2>
+    <input type="text" id="gitId" placeholder="Github Username">
+    <input type="submit" id="submit">
+    <p id="bio"></p>
+    <p id="name"></p>
+    <img src="" id="avatar">
+
+</body>
+<script>
+    
+    document.querySelector('#submit').addEventListener('click', function(e){
+       const user = document.querySelector('#gitId').value;
+       fetchUserData(user)
+    })
+
+    function fetchUserData(user){
+        const requestUrl = `https://api.github.com/users/${user}`
+        const xhr = new XMLHttpRequest();
+        xhr.open('GET', requestUrl)
+        xhr.onreadystatechange = function(){
+            if (xhr.readyState === 4 && xhr.status === 200) {
+                    const data = JSON.parse(xhr.responseText);
+                    document.querySelector('#name').innerText = `Name: ${data.name}`;
+                    document.querySelector('#bio').innerText = `Bio: ${data.bio}`;
+                    const avatar = document.querySelector('#avatar');
+                    avatar.src = data.avatar_url;
+                    avatar.style.display = 'block';
+                } else if (xhr.readyState === 4) {
+                    alert("failed to load data");
+                }
+            };
+        xhr.send();
+    }
+</script>
+</html>
